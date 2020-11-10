@@ -7,11 +7,11 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "cross-fetch": "^3.0.6",
-    "json-server": "^0.16.2",
     "node-sass": "^4.14.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-scripts": "4.0.0",
+    "react-select": "^3.1.0",
     "sass-loader": "^10.0.5",
     "web-vitals": "^0.2.4"
   },
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "headers": {
+    "Access-Control-Allow-Origin": "*"
   }
 }
