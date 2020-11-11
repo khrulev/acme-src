@@ -19,7 +19,9 @@ export const Conversations = (props) => {
 
     return (
         <div className="conversation__btn">
-            <select  className="conversation" id="conversations" onChange={props.handleSelectChange}>
+            <select className="conversation" 
+                    id="conversations" 
+                    onChange={props.handleSelectChange}>
                 <option  value="">All conversations</option>
                 {options_list}
             </select>
