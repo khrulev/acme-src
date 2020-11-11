@@ -10,11 +10,14 @@ export class Main extends Component {
         super(props);
         this.state = {
             users: [],
-            selected: new Set()
+            selected: new Set(),
+            isBurgerActive: false
         }
 
         this.handleSelectUser = this.handleSelectUser.bind(this);
         this.handleFolowUptUser = this.handleFolowUptUser.bind(this); 
+        this.handleBurgerClick = this.handleBurgerClick.bind(this); 
+        
     }
 
     handleSelectUser = (id) => (e) => {
@@ -42,6 +45,10 @@ export class Main extends Component {
         this.setState({ selected: new Set()});
     }
 
+    handleBurgerClick = () => {
+        this.setState({ isBurgerActive: !this.state.isBurgerActive});
+    }
+
     componentDidMount() {
         // TEST FILE MODE
         let users_JSON = new Array;
@@ -63,16 +70,19 @@ export class Main extends Component {
         return (
             <div className="container">
                  <div className="chat-wrapper chat">
+                    <div class={this.state.isBurgerActive ? "menu__burger active" : "menu__burger"} onClick={this.handleBurgerClick}> 
+                        <span></span>
+                    </div>
                     <AsidePanel 
                         users = {this.state.users} 
                         selected = {this.state.selected}
+                        isBurgerActive = {this.state.isBurgerActive}
                         handleSelectUser={this.handleSelectUser} 
                         handleFolowUptUser = {this.handleFolowUptUser}/>
-                        
-                    <MessagesWindow/>      
+                    <MessagesWindow
+                        isBurgerActive = {this.state.isBurgerActive}/>      
                 </div>
             </div>
-            
         );
     }
 }

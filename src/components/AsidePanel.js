@@ -26,7 +26,8 @@ export class AsidePanel extends React.Component {
 
     render() {
         return (
-            <div className="chat__aside">
+            
+            <div className={this.props.isBurgerActive ? "chat__aside active" : "chat__aside"}>
                 <Filters
                     users={this.props.users}
                     handleInputChange={this.handleInputChange}
